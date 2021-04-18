@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+## HTML/CSS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+When browser render the Dom, it will render each element as a rectangle box. This rectangle box is box model and it includes layers of content, padding, border and margin.
 
-## Available Scripts
+<br><br>
 
-In the project directory, you can run:
+## Js
 
-### `yarn start`
+```
+const sales = [
+        { itemSold: "Football", price: 19.99, dateSold: "2018-04-07", id: "j_123" },
+        { itemSold: "Trainers", price: 159.95, dateSold: "2018-03-02", id: "t_acds1" },
+        { itemSold: "Cricket bat", price: 204.97, dateSold: "2018-04-05", id: "j_456"},
+        { itemSold: "Rugby ball", price: 30.00, dateSold: "2017-04-22", id: "t_acds3" },
+        { itemSold: "Hockey stick", price: 54.95, dateSold: "2017-03-19", id: "j_999" }
+    ]
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+// 1.  Return the sum of the price of all properties as a single value.
+const sum = sales.reduce((total, sale) => sale.price + total, 0)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+// 2.  Return the items which were sold in 2017.
+const soldItemsIn2017 = sales.filter(sale => new Date(sale.dateSold).getFullYear() === 2017 )
 
-### `yarn test`
+// 3.  Return an array of all of the itemsSold properties as strings, sorted alphabetically.
+const itemsSold = sales.map(sale => sale.itemSold).sort()
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+// 4.  Using id as an argument, return the sale which matches the id.
+const findSaleByIdWrapper = (sales) => (id) => sales.find(sale => sale.id === id);
+const findSaleById = findSaleByIdWrapper(sales)
 
-### `yarn build`
+const targetSale = findSaleById('j_123')
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br><br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## layout
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To view the result, please use chrome to open the index.html in "build" folder
+if it doesn't work, please run below command to host a server to view the result. Thanks
 
-### `yarn eject`
+```
+yarn && yarn start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The test demo implemented responsive layout. It can be tested by toggle the device toolbar in Chrome dev tool or just narrow the browser. A menu button will appear on top left and it can toggle the sidebar.
+Other feature implemented includes a simple search bar.
