@@ -1,26 +1,30 @@
-@import './theme';
+@import 'theme';
 
-.header {
+* {
+  box-sizing: border-box;
+}
+
+main {
+  color: $contrastText;
+  background: $primary;
+  font-family: serif;
+  box-sizing: border-box;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 100%;
-  padding: 0.8em 0.75em;
-  background-color: $primary;
-  .icon-home {
-    height: 1.5em;
-    width: 1.5em;
-    font-size: 1rem;
-    fill: $secondary;
-    margin-left: 1em;
+  flex-direction: column;
+  height: 100vh;
+
+  p,
+  a {
+    font-family: 'monaco';
   }
 
-  h1 {
-    color: $secondary;
-    font-size: 1.5em;
-    font-weight: 500;
-    margin: 0;
-    padding: 0 0.75em;
+  .body {
+    padding-top: 6em;
+    display: flex;
+    height: 100%;
+    max-height: 1000px;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
   }
 }

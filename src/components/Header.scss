@@ -1,0 +1,28 @@
+@import '../theme';
+
+.header {
+  position: absolute;
+  z-index: 999;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  padding: 0.8em 0.75em;
+
+  .icon-home {
+    height: 1.5em;
+    width: 1.5em;
+    font-size: 1rem;
+    fill: $secondary;
+    margin-left: 1em;
+  }
+
+  h1 {
+    color: $secondary;
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 0;
+    padding: 0 0.75em;
+  }
+}

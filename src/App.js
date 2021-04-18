@@ -1,20 +1,17 @@
-import logo from './logo.svg';
 import './App.scss';
-import { ReactComponent as Home } from './assets/home.svg';
-import { ReactComponent as Search } from './assets/search.svg';
 
-import SearchBar from './components/SearchBar';
+import Header from './components/Header';
+import Home from './pages/Home';
+import NavList from './pages/NavList';
 
 function App() {
   return (
     <main>
-      <header className="header">
-        <Home className="icon-home" />
-
-        <h1>Home </h1>
-        <SearchBar />
-      </header>
-      <div className="body">body</div>
+      <Header />
+      <div className="body">
+        <Home />
+        <NavList />
+      </div>
     </main>
   );
 }

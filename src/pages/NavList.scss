@@ -1,0 +1,19 @@
+@import '../theme';
+
+nav.nav-links {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  padding: 2em 1.5em;
+  .nav-links__link {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 0 1.5em 0;
+    color: #fff;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $secondary;
+    }
+  }
+}
