@@ -1,24 +1,21 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { ReactComponent as Home } from './assets/home.svg';
+import { ReactComponent as Search } from './assets/search.svg';
+
+import SearchBar from './components/SearchBar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <main>
+      <header className="header">
+        <Home className="icon-home" />
+
+        <h1>Home </h1>
+        <SearchBar />
       </header>
-    </div>
+      <div className="body">body</div>
+    </main>
   );
 }
 

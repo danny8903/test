@@ -1,0 +1,45 @@
+@import '../theme';
+
+.search-bar-container {
+  font-size: 1rem;
+  fill: $secondary;
+  display: flex;
+  position: relative;
+  height: 36px;
+  flex: 1;
+  justify-content: flex-end;
+  margin-right: 1em;
+  .search-bar-wrapper {
+    display: flex;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 0 1em;
+
+    input {
+      position: relative;
+      vertical-align: top;
+      background-color: transparent;
+      width: 120px;
+      transition: width 300ms;
+      padding: 8px 0;
+      outline: 0;
+      border: 0;
+      color: white;
+
+      &:focus {
+        width: 170px;
+      }
+    }
+
+    .search-icon {
+      width: 36px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      pointer-events: none;
+      justify-content: flex-end;
+      box-sizing: border-box;
+      margin-left: 1em;
+    }
+  }
+}
