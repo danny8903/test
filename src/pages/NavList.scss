@@ -17,3 +17,22 @@ nav.nav-links {
     }
   }
 }
+
+@media screen and (max-width: 700px) {
+  nav.nav-links {
+    display: none;
+  }
+
+  nav.nav-links.mobileView {
+    position: absolute;
+    top: 60px;
+    height: calc(100% - 60px);
+    width: 100%;
+    writing-mode: unset;
+    text-orientation: unset;
+    display: flex;
+    flex-direction: column;
+    background-color: $primary;
+    opacity: 0.9;
+  }
+}

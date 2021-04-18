@@ -3,16 +3,19 @@ import './App.scss';
 import Header from './components/Header';
 import Home from './pages/Home';
 import NavList from './pages/NavList';
+import { StoreProvider } from './StoreProvider';
 
 function App() {
   return (
-    <main>
-      <Header />
-      <div className="body">
-        <Home />
-        <NavList />
-      </div>
-    </main>
+    <StoreProvider>
+      <main>
+        <Header />
+        <div className="body">
+          <Home />
+          <NavList />
+        </div>
+      </main>
+    </StoreProvider>
   );
 }
 

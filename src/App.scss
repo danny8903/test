@@ -28,3 +28,18 @@ main {
     width: 100%;
   }
 }
+
+button {
+  display: inline-flex;
+  outline: 0;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  vertical-align: middle;
+  justify-content: center;
+  text-decoration: none;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}

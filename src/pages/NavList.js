@@ -1,15 +1,32 @@
+import { useContext } from 'react';
+
 import './NavList.scss';
+import { StoreContext } from '../StoreProvider';
 
 function NavList() {
+  const { showMobileViewNav, toggleMobileViewNav } = useContext(StoreContext);
+
   return (
-    <nav className="nav-links">
-      <a className="nav-links__link" href="#home">
+    <nav className={`nav-links ${showMobileViewNav && 'mobileView'}`}>
+      <a
+        className="nav-links__link"
+        href="#home"
+        onClick={() => toggleMobileViewNav(false)}
+      >
         Home
       </a>
-      <a className="nav-links__link" href="#news">
+      <a
+        className="nav-links__link"
+        href="#news"
+        onClick={() => toggleMobileViewNav(false)}
+      >
         News
       </a>
-      <a className="nav-links__link" href="#contact">
+      <a
+        className="nav-links__link"
+        href="#contact"
+        onClick={() => toggleMobileViewNav(false)}
+      >
         Contact
       </a>
     </nav>
